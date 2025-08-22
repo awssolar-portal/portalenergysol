@@ -1,67 +1,63 @@
 <html lang="pt-BR">
-</div>
+</main>
+
+
+<aside>
+<section class="aside" id="contato">
+<h4>Fale conosco</h4>
+<p class="meta">Preencha o formulário ou use o e‑mail direto.</p>
+<form id="contactForm" onsubmit="return submitForm(event)">
+<input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+<input type="email" id="email" name="email" placeholder="Seu e‑mail" required />
+<input type="text" id="assunto" name="assunto" placeholder="Assunto" />
+<textarea id="mensagem" name="mensagem" placeholder="Mensagem" required></textarea>
+<button class="btn" type="submit">Enviar (abre seu e‑mail)</button>
+</form>
+<p style="margin-top:10px;font-size:13px;color:var(--muted)">Ou envie diretamente para: <strong>contato@energysolver.com.br</strong></p>
 </section>
-
-
-<!-- Identificação + Sócios -->
-<section class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 p-6">
-<div class="bg-white rounded-xl shadow p-6 border border-gray-200">
-<h2 class="text-sm uppercase font-semibold text-gray-500 mb-4">Identificação</h2>
-<dl class="space-y-2 text-sm">
-<div class="flex justify-between"><dt class="font-medium">Situação</dt><dd class="text-green-600 font-semibold">Ativa</dd></div>
-<div class="flex justify-between"><dt class="font-medium">Data de Abertura</dt><dd>16/02/2017</dd></div>
-<div class="flex justify-between"><dt class="font-medium">Natureza Jurídica</dt><dd>Sociedade Empresária Limitada</dd></div>
-<div><dt class="font-medium">Atividade Principal</dt><dd class="mt-1 text-gray-600">Projetos e soluções em energia</dd></div>
-</dl>
+</aside>
 </div>
 
 
-<div class="bg-white rounded-xl shadow p-6 border border-gray-200">
-<h2 class="text-sm uppercase font-semibold text-gray-500 mb-4">Sócios / Administradores</h2>
-<ul class="space-y-3 text-sm">
-<li>
-<p class="font-medium">Guilherme Mageski Brandão</p>
-<p class="text-gray-500">Sócio-Administrador</p>
-</li>
-<li>
-<p class="font-medium">Henrique Montalvão Bernardes</p>
-<p class="text-gray-500">Sócio-Administrador</p>
-</li>
-</ul>
+<div class="foot">Ficha demonstrativa pronta para deploy no GitHub Pages • arquivo: <code>index.html</code></div>
 </div>
-</section>
 
 
-<!-- Principais Serviços -->
-<section class="bg-gray-50 py-12 px-6">
-<div class="max-w-5xl mx-auto text-center mb-10">
-<h2 class="text-2xl font-bold mb-2">Nossos Principais Serviços</h2>
-<p class="text-gray-600">Soluções completas em energia para empresas e residências</p>
-</div>
-<div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-<div class="bg-white rounded-xl shadow p-6 border border-gray-200 text-center hover:shadow-lg transition">
-<div class="text-blue-600 text-4xl mb-3">⚡</div>
-<h3 class="font-semibold mb-2">Eficiência Energética</h3>
-<p class="text-sm text-gray-600">Projetos que reduzem consumo e otimizam custos de energia.</p>
-</div>
-<div class="bg-white rounded-xl shadow p-6 border border-gray-200 text-center hover:shadow-lg transition">
-<div class="text-teal-600 text-4xl mb-3">☀️</div>
-<h3 class="font-semibold mb-2">Energia Solar</h3>
-<p class="text-sm text-gray-600">Sistemas fotovoltaicos dimensionados sob medida para cada cliente.</p>
-</div>
-<div class="bg-white rounded-xl shadow p-6 border border-gray-200 text-center hover:shadow-lg transition">
-<div class="text-yellow-500 text-4xl mb-3">🔋</div>
-<h3 class="font-semibold mb-2">Armazenamento de Energia</h3>
-<p class="text-sm text-gray-600">Soluções modernas de baterias e sistemas de backup.</p>
-</div>
-</div>
-</section>
-
-
-<!-- Rodapé -->
-<footer class="mt-auto bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-500">
-<p>© 2025 Energy Solver — Soluções em Energia LTDA • Site demonstrativo • index.html</p>
+<footer class="site">
+© <span id="year"></span> Energy Solver — Soluções em Energia LTDA • Todos os direitos reservados (site demonstrativo)
 </footer>
 </div>
+
+
+<script>
+// Atualiza ano no rodapé
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// Abre mailto com conteúdo preenchido (sem backend)
+function submitForm(e){
+e.preventDefault();
+var nome = encodeURIComponent(document.getElementById('nome').value.trim());
+var email = encodeURIComponent(document.getElementById('email').value.trim());
+var assunto = encodeURIComponent(document.getElementById('assunto').value.trim() || 'Orçamento via site');
+var mensagem = encodeURIComponent(document.getElementById('mensagem').value.trim() + '\n\nRemetente: ' + nome + ' <' + decodeURIComponent(email) + '>');
+var to = 'contato@energysolver.com.br';
+var href = 'mailto:' + to + '?subject=' + assunto + '&body=' + mensagem;
+window.location.href = href;
+return false;
+}
+
+
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+a.addEventListener('click', function(e){
+var target = document.querySelector(this.getAttribute('href'));
+if(target){
+e.preventDefault();
+target.scrollIntoView({behavior:'smooth',block:'start'});
+}
+});
+});
+</script>
 </body>
 </html>
