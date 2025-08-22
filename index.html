@@ -1,57 +1,58 @@
-energysolver<html lang="pt-BR">
-b{color:#0f172a}
-.footer{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-top:1px solid #eef2f6;background:#fbfdff}
-.btn{display:inline-block;padding:8px 12px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600}
-small.note{display:block;color:var(--muted);margin-top:8px}
-</style>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Energy Solver — CNPJ 27.129.412/0001-82</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<main class="container">
-<article class="card" itemscope itemtype="https://schema.org/Organization">
-<header>
-<div class="logo" aria-hidden="true">ES</div>
+<body class="bg-gray-100 text-gray-800">
+<div class="min-h-screen flex items-center justify-center p-6">
+<div class="w-full max-w-4xl bg-white rounded-2xl shadow-xl overflow-hidden">
+<!-- Cabeçalho -->
+<header class="flex items-center gap-4 p-6 border-b border-gray-200 bg-gradient-to-r from-blue-600 to-teal-500 text-white">
+<div class="flex h-14 w-14 items-center justify-center rounded-xl bg-white/20 font-bold text-lg">ES</div>
 <div>
-<h1 itemprop="name">Energy Solver — Soluções em Energia LTDA</h1>
-<div class="muted" itemprop="alternateName">Energy Solver</div>
+<h1 class="text-xl font-semibold">Energy Solver — Soluções em Energia LTDA</h1>
+<p class="text-sm opacity-80">CNPJ: 27.129.412/0001-82</p>
 </div>
 </header>
 
 
-<div class="content">
-<section class="section" aria-labelledby="identificacao">
-<h2 id="identificacao">Identificação</h2>
-<div class="kv" style="margin-top:12px">
-<b>CNPJ</b>
-<div><span itemprop="taxID">27.129.412/0001-82</span></div>
-
-
-<b>Situação</b>
-<div>Ativa</div>
-
-
-<b>Data de Abertura</b>
-<div>16/02/2017</div>
-
-
-<b>Natureza Jurídica</b>
-<div>Sociedade Empresária Limitada</div>
-
-
-<b>Atividade Principal</b>
-<div>Projetos e soluções em energia (dados resumidos)</div>
-</div>
-
-
-<small class="note">Observação: conteúdo estático para apresentação. Atualize conforme fontes oficiais.</small>
+<!-- Conteúdo -->
+<div class="grid md:grid-cols-2 gap-6 p-6">
+<section class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+<h2 class="text-sm uppercase font-semibold text-gray-500 mb-3">Identificação</h2>
+<dl class="space-y-2 text-sm">
+<div class="flex justify-between"><dt class="font-medium">Situação</dt><dd class="text-green-600 font-semibold">Ativa</dd></div>
+<div class="flex justify-between"><dt class="font-medium">Data de Abertura</dt><dd>16/02/2017</dd></div>
+<div class="flex justify-between"><dt class="font-medium">Natureza Jurídica</dt><dd>Sociedade Empresária Limitada</dd></div>
+<div><dt class="font-medium">Atividade Principal</dt><dd class="mt-1 text-gray-600">Projetos e soluções em energia (resumido)</dd></div>
+</dl>
 </section>
 
 
-<aside class="section" aria-labelledby="socio">
-<h2 id="socio">Sócios / Administradores</h2>
-<div style="margin-top:12px">
-<p><strong>Guilherme Mageski Brandão</strong><br><span class="muted">Sócio‑Administrador</span></p>
-<p><strong>Henrique Montalvão Bernardes</strong><br><span class="muted">Sócio‑Administrador</span></p>
+<section class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+<h2 class="text-sm uppercase font-semibold text-gray-500 mb-3">Sócios / Administradores</h2>
+<ul class="space-y-3 text-sm">
+<li>
+<p class="font-medium">Guilherme Mageski Brandão</p>
+<p class="text-gray-500">Sócio‑Administrador</p>
+</li>
+<li>
+<p class="font-medium">Henrique Montalvão Bernardes</p>
+<p class="text-gray-500">Sócio‑Administrador</p>
+</li>
+</ul>
+</section>
 </div>
-<a class="btn" href="#contact">Contatar</a>
-</aside>
+
+
+<!-- Rodapé -->
+<footer class="flex justify-between items-center px-6 py-4 border-t border-gray-200 text-xs text-gray-500">
+<span>Arquivo pronto para GitHub Pages</span>
+<span>index.html</span>
+</footer>
 </div>
+</div>
+</body>
+</html>
