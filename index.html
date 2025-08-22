@@ -1,63 +1,57 @@
 <html lang="pt-BR">
-</main>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sua Empresa de Energia — Consultoria, Projetos e Gestão</title>
+<meta name="description" content="Consultoria e projetos de energia solar e eficiência energética. Orçamento rápido, estudo de viabilidade e gestão completa." />
+<meta name="theme-color" content="#0ea5e9" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sua Empresa de Energia — Consultoria, Projetos e Gestão" />
+<meta property="og:description" content="Consultoria e projetos de energia solar e eficiência energética. Orçamento rápido e gestão ponta a ponta." />
+<meta property="og:image" content="/og-cover.jpg" />
 
 
-<aside>
-<section class="aside" id="contato">
-<h4>Fale conosco</h4>
-<p class="meta">Preencha o formulário ou use o e‑mail direto.</p>
-<form id="contactForm" onsubmit="return submitForm(event)">
-<input type="text" id="nome" name="nome" placeholder="Seu nome" required />
-<input type="email" id="email" name="email" placeholder="Seu e‑mail" required />
-<input type="text" id="assunto" name="assunto" placeholder="Assunto" />
-<textarea id="mensagem" name="mensagem" placeholder="Mensagem" required></textarea>
-<button class="btn" type="submit">Enviar (abre seu e‑mail)</button>
-</form>
-<p style="margin-top:10px;font-size:13px;color:var(--muted)">Ou envie diretamente para: <strong>contato@energysolver.com.br</strong></p>
-</section>
-</aside>
-</div>
-
-
-<div class="foot">Ficha demonstrativa pronta para deploy no GitHub Pages • arquivo: <code>index.html</code></div>
-</div>
-
-
-<footer class="site">
-© <span id="year"></span> Energy Solver — Soluções em Energia LTDA • Todos os direitos reservados (site demonstrativo)
-</footer>
-</div>
-
-
-<script>
-// Atualiza ano no rodapé
-document.getElementById('year').textContent = new Date().getFullYear();
-
-
-// Abre mailto com conteúdo preenchido (sem backend)
-function submitForm(e){
-e.preventDefault();
-var nome = encodeURIComponent(document.getElementById('nome').value.trim());
-var email = encodeURIComponent(document.getElementById('email').value.trim());
-var assunto = encodeURIComponent(document.getElementById('assunto').value.trim() || 'Orçamento via site');
-var mensagem = encodeURIComponent(document.getElementById('mensagem').value.trim() + '\n\nRemetente: ' + nome + ' <' + decodeURIComponent(email) + '>');
-var to = 'contato@energysolver.com.br';
-var href = 'mailto:' + to + '?subject=' + assunto + '&body=' + mensagem;
-window.location.href = href;
-return false;
+<style>
+:root {
+--bg: #0b1220;
+--card: #0f172a;
+--muted: #94a3b8;
+--text: #e2e8f0;
+--brand: #0ea5e9; /* ciano */
+--brand-2: #22c55e; /* verde */
 }
-
-
-// Smooth scroll for internal links
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-a.addEventListener('click', function(e){
-var target = document.querySelector(this.getAttribute('href'));
-if(target){
-e.preventDefault();
-target.scrollIntoView({behavior:'smooth',block:'start'});
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+background: radial-gradient(1200px 600px at 70% -10%, rgba(14,165,233,.15), transparent 50%),
+radial-gradient(1000px 500px at 10% 10%, rgba(34,197,94,.12), transparent 50%),
+var(--bg);
+color: var(--text);
+line-height: 1.5;
 }
-});
-});
-</script>
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { width: min(1100px, 92vw); margin-inline: auto; }
+
+
+/* Header */
+header { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(180%) blur(8px); background: rgba(11,18,32,.6); border-bottom: 1px solid rgba(148,163,184,.12); }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .3px; }
+.brand .logo { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display: grid; place-items: center; color: white; font-weight: 900; }
+.menu { display: flex; gap: 18px; align-items: center; }
+.menu a { color: var(--text); opacity: .9; }
+.cta { padding: 10px 16px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); border-radius: 999px; color: #0b1220; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 6px 20px rgba(14,165,233,.25); }
+.cta:hover { filter: brightness(1.05); }
+
+
+/* Hero */
+.hero { padding: 64px 0 24px; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: center; }
+h1 { font-size: clamp(28px, 5vw, 52px); line-height: 1.1; margin: 0 0 14px; }
+.lead { color: var(--muted); font-size: clamp(16px, 2.2vw, 18px); }
+.hero-card { background: linear-gradient(180deg, rgba(15,23,42,.7), rgba(15,23,42,.4)); border: 1px solid rgba(148,163,184,.16); padding: 18px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+.form { display: grid; gap: 10px; }
 </body>
-</html>
